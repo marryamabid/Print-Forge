@@ -41,3 +41,12 @@ export type NavLinkProps = {
 
   children: React.ReactNode;
 };
+export type GetModelProp = {
+  category?: string;
+};
+
+export type ModelsPropPage = {
+  searchParams: {
+    q?: string;
+  };
+};
