@@ -8,6 +8,7 @@ export type Model = {
   likes: number;
   category: string;
   dateAdded: string;
+  image: string;
 };
 
 export type ModelDetailsPage = {
@@ -21,4 +22,22 @@ export type ModelCardprops = {
 export type PillProps = {
   children: React.ReactNode;
   className?: string;
+};
+export type ModelGridProps = {
+  title: string;
+  models: Model[];
+};
+export type Category = {
+  displayName: string;
+  slug: string;
+};
+export type CategoryPageProps = {
+  params: Promise<{
+    categoryName: string;
+  }>;
+};
+export type NavLinkProps = {
+  href: string;
+
+  children: React.ReactNode;
 };

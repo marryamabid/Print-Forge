@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { RootLayoutProps } from "@/app/types";
 import { Albert_Sans, Montserrat_Alternates } from "next/font/google";
-import Image from "next/image";
-import logoImage from "@/public/printforge-logo.png";
+
 import "./globals.css";
-import Link from "next/link";
+import Navbar from "./Components/Navbar";
 const albertSans = Albert_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -38,23 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${albertSans.className} ${montserratAlternates.variable}`}
       >
-        <header className="w-full bg-white">
-          <nav className="flex justify-between items-center px-4 py-6">
-            <div className="relative">
-              <Link href={"/"}>
-                <Image src={logoImage} alt="PrintForge Logo" width={150} />
-              </Link>
-            </div>
-            <ul className="flex items-center gap-3">
-              <Link href={"/3d-models"}>
-                <li>3D Models</li>
-              </Link>
-              <Link href={"/about"}>
-                <li>About</li>
-              </Link>
-            </ul>
-          </nav>
-        </header>
+        <Navbar />
         {children}
       </body>
     </html>
